@@ -62,7 +62,7 @@ const HotCollections = () => {
         }
       },
       {
-        breakpoint: 480,
+        breakpoint: 600,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1
@@ -76,7 +76,7 @@ const HotCollections = () => {
     return (
       <div
         className={className}
-        style={{ ...style, filter: 'invert()', transform: "scale(1.4)" }}
+        style={{ ...style, filter: 'invert()', transform: "scale(1.4)", right: "-5px" }}
         onClick={onClick}
       />
     );
@@ -88,7 +88,7 @@ const HotCollections = () => {
       <div
         className={className}
         style={{
-          ...style, filter: 'invert()', transform: "scale(1.4)"
+          ...style, filter: 'invert()', transform: "scale(1.4)", left: "-5px"
         }
         }
         onClick={onClick}
