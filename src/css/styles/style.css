@@ -13172,7 +13172,12 @@ a.read_more i {
   height: auto;
 }
 
-.nft_coll {
+.gap4 {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.nft_coll {  
   background: #ffffff;
   padding-bottom: 10px;
   border: solid 1px #dddddd;
@@ -16649,6 +16654,7 @@ img {
     top: -21px;
   }
 }
+
 
 .skeleton-box {
   display: inline-block;
