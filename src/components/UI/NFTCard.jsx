@@ -142,6 +142,7 @@ const NFTCard = ({ nftItems, inSlider }) => {
                       <img
                         src={item.nftImage}
                         className="lazy nft__item_preview"
+                        style={{ maxWidth: "300px" }}
                         alt=""
                       />
                     </Link>
@@ -205,6 +206,7 @@ const NFTCard = ({ nftItems, inSlider }) => {
                   <img
                     src={item.nftImage}
                     className="lazy nft__item_preview"
+                    style={{ maxWidth: "300px" }}
                     alt=""
                   />
                 </Link>
