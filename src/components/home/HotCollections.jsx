@@ -32,10 +32,6 @@ const HotCollections = () => {
     getCollections();
   }, []);
 
-  useEffect(() => {
-    console.log(collections);
-  }, [collections]);
-
   let settings = {
     dots: false,
     infinite: true,

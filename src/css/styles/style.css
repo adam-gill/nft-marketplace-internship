@@ -16693,6 +16693,10 @@ img {
   }
 }
 
+.heart-color {
+  color: #f08080;
+}
+
 .nft-image {
   height: 100%;
   width: 100%;
