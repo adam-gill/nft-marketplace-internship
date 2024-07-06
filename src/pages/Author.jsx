@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import AuthorBanner from "../images/author_banner.jpg";
 import AuthorItems from "../components/author/AuthorItems";
 import { Link } from "react-router-dom";
-import AuthorImage from "../images/author_thumbnail.jpg";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import NFTSkeletonCard from "../components/UI/NFTSkeletonCard";
@@ -13,23 +12,23 @@ const Author = () => {
   const [loading, setLoading] = useState(true);
   const [following, setFollowing] = useState(false);
 
-  async function getAuthor() {
-    setLoading(true);
-    try {
-      const { data } = await axios.get(
-        `https://us-central1-nft-cloud-functions.cloudfunctions.net/authors?author=${id}`
-      );
-      setAuthor(data);
-      setLoading(false);
-    } catch (error) {
-      console.log(error);
-      setLoading(true);
-    }
-  }
-
   useEffect(() => {
+    async function getAuthor() {
+      setLoading(true);
+      try {
+        const { data } = await axios.get(
+          `https://us-central1-nft-cloud-functions.cloudfunctions.net/authors?author=${id}`
+        );
+        setAuthor(data);
+        setLoading(false);
+      } catch (error) {
+        console.log(error);
+        setLoading(true);
+      }
+    }
+
     getAuthor();
-  }, []);
+  }, [id]);
 
   const follow = () => {
     setFollowing(!following);
