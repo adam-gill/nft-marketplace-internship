@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import AuthorImage from "../../images/author_thumbnail.jpg";
 import axios from "axios";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const TopSellers = () => {
-
+  AOS.init();
   const [topSellers, setTopSellers] = useState({});
   const [loading, setLoading] = useState(true);
 
@@ -32,7 +34,7 @@ const TopSellers = () => {
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
-            <div className="text-center">
+            <div className="text-center" data-aos="fade-in" data-aos-duration="1500">
               <h2>Top Sellers</h2>
               <div className="small-border bg-color-2"></div>
             </div>
@@ -81,7 +83,7 @@ const TopSellers = () => {
                   </div>
                 </li>
               ))}
-            </ol>) : (<ol className="author_list">
+            </ol>) : (<ol className="author_list" data-aos="fade-up" data-aos-duration="1500">
               {Object.values(topSellers).map((item) => (
                 <li key={item.id}>
                   <div className="author_list_pp">

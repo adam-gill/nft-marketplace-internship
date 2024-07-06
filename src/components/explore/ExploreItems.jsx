@@ -5,12 +5,14 @@ import nftImage from "../../images/nftImage.jpg";
 import axios from "axios";
 import NFTCardSkeleton from "../UI/NFTSkeletonCard";
 import NFTCard from "../UI/NFTCard";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const ExploreItems = () => {
+  AOS.init();
   const [loading, setLoading] = useState(false);
   const [exploreItems, setExploreItems] = useState([]);
   const [itemsToShow, setItemsToShow] = useState(8);
-
 
   async function getExploreItems(filter) {
     setLoading(true);
@@ -71,13 +73,11 @@ const ExploreItems = () => {
       {loading ? (
         <NFTCardSkeleton numOfCards={8} />
       ) : (
-        <NFTCard
-          nftItems={exploreItems.slice(0, itemsToShow)}
-          inSlider={false}
-        />
+          <NFTCard
+            nftItems={exploreItems.slice(0, itemsToShow)}
+            inSlider={false}
+          />
       )}
-
-      {/* given */}
 
       <div className={itemsToShow >= 16 ? "d-none" : "col-md-12 text-center"}>
         <Link
