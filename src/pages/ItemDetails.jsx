@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import EthImage from "../images/ethereum.svg";
 import { Link } from "react-router-dom";
-import AuthorImage from "../images/author_thumbnail.jpg";
-import nftImage from "../images/nftImage.jpg";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
@@ -15,23 +13,23 @@ const ItemDetails = () => {
   const [loading, setLoading] = useState(true);
   const [itemDetails, setItemDetails] = useState();
 
-  async function getItemDetails() {
-    setLoading(true);
-    try {
-      const { data } = await axios.get(
-        `https://us-central1-nft-cloud-functions.cloudfunctions.net/itemDetails?nftId=${id}`
-      );
-      setItemDetails(data);
-      setLoading(false);
-    } catch (error) {
-      console.log(error);
-      setLoading(true);
-    }
-  }
-
   useEffect(() => {
+    async function getItemDetails() {
+      setLoading(true);
+      try {
+        const { data } = await axios.get(
+          `https://us-central1-nft-cloud-functions.cloudfunctions.net/itemDetails?nftId=${id}`
+        );
+        setItemDetails(data);
+        setLoading(false);
+      } catch (error) {
+        console.log(error);
+        setLoading(true);
+      }
+    }
+
     getItemDetails();
-  }, []);
+  }, [id]);
 
   return (
     <div id="wrapper">
