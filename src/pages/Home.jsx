@@ -11,7 +11,7 @@ const Home = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  // merge test
+  // From main, don't remove
 
   return (
     <div id="wrapper">
