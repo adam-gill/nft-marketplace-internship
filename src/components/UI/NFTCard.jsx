@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
-const NFTCard = ({ nftItems, inSlider }) => {
+const NFTCard = ({ nftItems, inSlider, authorImage, authorId }) => {
   const [time, setTime] = useState(Date.now());
 
   const formatTime = (expiryDate) => {
@@ -108,7 +108,7 @@ const NFTCard = ({ nftItems, inSlider }) => {
                 <div className="nft__item">
                   <div className="author_list_pp">
                     <Link
-                      to={"/author/" + item.authorId}
+                      to={item.authorId}
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                     >
@@ -172,11 +172,11 @@ const NFTCard = ({ nftItems, inSlider }) => {
             <div className="nft__item">
               <div className="author_list_pp">
                 <Link
-                  to={"/author/" + item.authorId}
+                  to={item.authorId ? "/author/" + item.authorId : "/author/" + authorId}
                   data-bs-toggle="tooltip"
                   data-bs-placement="top"
                 >
-                  <img className="lazy" src={item.authorImage} alt="" />
+                  <img className="lazy" src={item.authorImage ? item.authorImage : authorImage} alt="" />
                   <i className="fa fa-check"></i>
                 </Link>
               </div>

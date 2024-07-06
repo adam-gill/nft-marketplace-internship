@@ -319,6 +319,17 @@ header.smaller.scroll-light #mainmenu li li a:hover {
   font-size: 30px;
 }
 
+.skeleton-box__author {
+  color: transparent
+}
+
+.authorLoadingState {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+}
+
 .logo-smaller div#logo img {
   font-size: 30px;
 }
@@ -15476,6 +15487,10 @@ img {
   .slider_text {
     padding-top: 0px;
   }
+
+  .skeleton-box__author {
+    display: none !important;
+  }
 }
 
 @media only screen and (max-width: 1090px) {
@@ -16291,6 +16306,10 @@ img {
 
   .d_profile {
     display: block;
+  }
+
+  .skeleton-box__author {
+    display: none !important;
   }
 
   .d_profile .de-flex-col {
